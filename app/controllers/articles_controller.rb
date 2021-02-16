@@ -1,7 +1,8 @@
 # frozen_string_literal: true
 
 class ArticlesController < ApplicationController
-  before_action :find_options_for_article_status, only: [:new]
+  before_action :find_article, only: [:edit]
+  before_action :find_options_for_article_status, only: [:new, :edit]
 
   def index
     @articles = Article.publish.order(created_at: :desc)
@@ -21,7 +22,13 @@ class ArticlesController < ApplicationController
     end
   end
 
+  def edit; end
+
   private
+
+  def find_article
+    @article = Article.find(params[:id])
+  end
 
   def article_params
     params.require(:article).permit(

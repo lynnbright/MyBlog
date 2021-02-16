@@ -1,0 +1,9 @@
+<%= form_for article do |f| %>
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+  <%= f.label :content %>
+  <%= f.text_area :content %>
+  <%= f.label :status %>
+  <%= f.select :status, options_for_select(@options_for_article_status, article.status) %>
+  <%= f.submit '儲存' %>
+<% end %>
