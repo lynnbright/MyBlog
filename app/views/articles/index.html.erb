@@ -8,5 +8,6 @@
   <li>發布時間：<%= article.created_at %></li>
   <li>最後更新時間：<%= article.updated_at %></li>
   <%= link_to '編輯', edit_article_path(article) %>
+  <%= link_to '刪除', article_path(article), method: 'delete', data: { confirm: '確定要刪除？' } %>
 </ul>
 <% end %>

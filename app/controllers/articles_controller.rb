@@ -32,6 +32,11 @@ class ArticlesController < ApplicationController
     end
   end
 
+  def destroy
+    # ToDo: 改用軟刪除
+    redirect_to articles_path, notice: '已成功刪除' if @article.destroy
+  end
+
   private
 
   def find_article
