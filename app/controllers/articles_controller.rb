@@ -11,7 +11,25 @@ class ArticlesController < ApplicationController
     @article = Article.new
   end
 
+  def create
+    @article = Article.new(article_params)
+
+    if @article.save
+      redirect_to articles_path
+    else
+      render :edit
+    end
+  end
+
   private
+
+  def article_params
+    params.require(:article).permit(
+      :title,
+      :content,
+      :status
+    )
+  end
 
   def find_options_for_article_status
     # TODO: _ use i18n to show select-text
