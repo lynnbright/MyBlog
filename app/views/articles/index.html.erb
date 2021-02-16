@@ -1,0 +1,10 @@
+文章列表
+
+<% @articles.each do |article| %>
+<ul>
+  <li>標題：<%= article.title %></li>
+  <li>內容：<%= article.content %></li>
+  <li>發布時間：<%= article.created_at %></li>
+  <li>最後更新時間：<%= article.updated_at %></li>
+</ul>
+<% end %>
