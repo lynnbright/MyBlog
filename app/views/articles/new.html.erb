@@ -1,0 +1,11 @@
+新增文章
+
+<%= form_for @article, url: articles_path do |f| %>
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+  <%= f.label :content %>
+  <%= f.text_area :content %>
+  <%= f.label :status %>
+  <%= f.select :status, options_for_select(@options_of_article_status, @article.status) %>
+  <%= f.submit '新增' %>
+<% end %>
