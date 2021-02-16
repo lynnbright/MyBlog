@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class ArticlesController < ApplicationController
-  before_action :find_article, only: [:edit]
+  before_action :find_article, only: [:edit, :update, :destroy]
   before_action :find_options_for_article_status, only: [:new, :edit]
 
   def index
@@ -23,6 +23,14 @@ class ArticlesController < ApplicationController
   end
 
   def edit; end
+
+  def update
+    if @article.update(article_params)
+      redirect_to edit_article_path(@article), notice: '更新成功'
+    else
+      render :edit
+    end
+  end
 
   private
 
