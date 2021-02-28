@@ -1,24 +1,11 @@
-# README
+[![Build Status](https://travis-ci.org/lynnbright/MyBlog.png?branch=master)](https://travis-ci.org/{ORG-or-USERNAME}/{REPO-NAME})
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# MyBlog
 
-Things you may want to cover:
+MyBlog is a website to publish articles.
 
-* Ruby version
+* Ruby version: 2.7.2
 
-* System dependencies
+* Rails Version: 6.0.3
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* Postgresql: psql (PostgreSQL) 13.1
