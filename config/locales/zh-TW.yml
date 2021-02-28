@@ -1,0 +1,6 @@
+zh-TW:
+  enum:
+    article:
+      status:
+        draft: 草稿
+        publish: 發佈

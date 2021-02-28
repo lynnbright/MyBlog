@@ -52,9 +52,8 @@ class ArticlesController < ApplicationController
   end
 
   def find_options_for_article_status
-    # TODO: _ use i18n to show select-text
     @options_for_article_status = Article.statuses.map do |key, _|
-      [_, key]
+      [I18n.t(key, scope: 'enum.article.status'), key]
     end
   end
 end
