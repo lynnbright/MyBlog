@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class ArticlesController < ApplicationController
-  before_action :find_article, only: [:edit, :update, :destroy]
+  before_action :find_article, only: [:edit, :update, :destroy, :show]
   before_action :find_options_for_article_status, only: [:new, :edit]
 
   def index
@@ -11,6 +11,8 @@ class ArticlesController < ApplicationController
   def new
     @article = Article.new
   end
+
+  def show; end
 
   def create
     @article = Article.new(article_params)
