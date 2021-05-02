@@ -1,0 +1,20 @@
+<div class="container">
+  <div class="row">
+    <div class="col-lg-8 col-md-10 mx-auto">
+      <% @articles.each do |article| %>
+        <div class="post-preview">
+          <%= link_to article_path(article) do %>
+            <h2><%= article.title %></h2>
+          <% end %>
+          <p class="post-meta">
+            <%= article.created_at.strftime('Posted on %F') %>
+          </p>
+        </div>
+        <hr>
+        <%#= link_to '編輯', edit_article_path(article) %>
+        <%#= link_to '刪除', article_path(article), method: 'delete', data: { confirm: '確定要刪除？' } %>
+      <% end %>
+    </div>
+  </div>
+</div>
+
