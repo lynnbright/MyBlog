@@ -5,7 +5,7 @@ class ArticlesController < ApplicationController
   before_action :find_options_for_article_status, only: [:new, :edit]
 
   def index
-    @articles = Article.publish.order(created_at: :desc)
+    @articles = Article.publish.recent
   end
 
   def new
