@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class ArticlesController < ApplicationController
+  before_action :authenticate_user!, except: [:index, :show]
   before_action :find_article, only: [:edit, :update, :destroy, :show]
   before_action :find_options_for_article_status, only: [:new, :edit]
 
