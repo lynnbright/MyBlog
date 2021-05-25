@@ -13,12 +13,19 @@
         <li class="nav-item">
           <%= link_to 'Posts', articles_path, class: 'nav-link' %>
         </li>
-        <li class="nav-item">
-          <a href="mailto:tv725987@gmail.com" class="nav-link">Contact</a>
-        </li>
-        <li class="nav-item">
-          <%= link_to '新增文章', new_article_path, class: 'nav-link' %>
-        </li>
+
+        <% if user_signed_in? && current_user.admin? %>
+          <li class="nav-item">
+            <%= link_to 'Add article', new_article_path, class: 'nav-link' %>
+          </li>
+          <li class="nav-item">
+            <%= link_to 'logout', destroy_user_session_path, class: 'nav-link', method: 'delete' %>
+          </li>
+        <% else %>
+          <li class="nav-item">
+            <%= link_to 'login', new_user_session_path, class: 'nav-link' %>
+          </li>
+        <% end %>
       </ul>
     </div>
   </div>
@@ -29,12 +36,12 @@
     <div class="row">
       <div class="col-lg-8 col-md-10 mx-auto">
         <div class="site-heading">
-            <h2>
-              Lynn's Dev Blog
-            </h2>
-            <span class="subheading">
-              Step by step. Enjoying what coding gives me.
-            </span>
+          <h2>
+            Lynn's Dev Blog
+          </h2>
+          <span class="subheading">
+            Step by step. Enjoying what coding gives me.
+          </span>
         </div>
       </div>
     </div>
