@@ -22,7 +22,7 @@ module ApplicationHelper
       superscript: true
     }
 
-    rendered =  Redcarpet::Render::HTML.new(render_options)
+    rendered =  SyntaxHighlightHtml.new(render_options)
     markdown = Redcarpet::Markdown.new(rendered, markdown_options)
     markdown.render(text).html_safe
   end
