@@ -5,6 +5,9 @@
         <h2><%= @article.title %></h2>
         <p class="post-meta">
           <%= @article.created_at.strftime('Posted on %F') %>
+          <% if user_signed_in? && current_user.admin? %>
+            <%= link_to 'Edit', edit_article_path(@article), class: 'ml-2' %>
+          <% end %>
         </p>
       </div>
     </div>
