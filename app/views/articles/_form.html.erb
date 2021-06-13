@@ -1,9 +1,23 @@
-<%= form_for article do |f| %>
-  <%= f.label :title %>
-  <%= f.text_field :title %>
-  <%= f.label :content %>
-  <%= f.text_area :content %>
-  <%= f.label :status %>
-  <%= f.select :status, options_for_select(@options_for_article_status, article.status) %>
-  <%= f.submit '儲存' %>
-<% end %>
+<div class="mx-5">
+  <%= form_for article do |f| %>
+
+    <div class="form-group">
+      <%= f.label :title, class: 'form-label' %>
+      <%= f.text_field :title, class: 'form-control' %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :content, class: 'form-label' %>
+      <%= f.text_area :content, class: 'form-control', style: 'height: 300px' %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :status, class: 'form-label' %>
+      <%= f.select :status, options_for_select(@options_for_article_status, article.status), {}, { class: 'form-control' } %>
+    </div>
+
+    <div class="form-group">
+      <%= f.submit '儲存', class: 'btn btn-dark btn-sm' %>
+    </div>
+  <% end %>
+</div>
